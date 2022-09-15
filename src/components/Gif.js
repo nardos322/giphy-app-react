@@ -4,7 +4,6 @@ import React from "react";
 
 function Gif(props) {
     
-   // console.log(props.gif1)
     
         return (
             <div className="col-lg-3 col-md-6 mb-4">

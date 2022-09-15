@@ -7,52 +7,80 @@ import React, { Component } from 'react';
 class App extends Component {
   constructor() {
     super()
-    
+
     this.state = {
-      gifs: []
+      gifs: [],
+      gifRandom1: '',
+      gifRandom2: '',
+      gifRandom3: '',
+      gifRandom4: '',
+      
     }
 
   }
 
 
-  componentDidMount(){
-    fetch('https://api.giphy.com/v1/gifs/trending?api_key=keKRpgfREXDm2qFAbAtsx2DTTci7jIue&limit=25&rating=g')
-    .then(res => res.json())
-    .then(data => {
-      //console.log(data)
-      this.setState({
-        gifs: data.data
-        
+  componentDidMount() {
+    fetch('https://api.giphy.com/v1/gifs/trending?api_key=keKRpgfREXDm2qFAbAtsx2DTTci7jIue')
+      .then(res => res.json())
+      .then(data => {
+
+        this.setState({
+          gifs: data.data
+
+        })
+
+
       })
-     
-    // console.log('me monte')
-     //console.log(this.state)
-    })
-    .catch(error => console.log(error))
+      .catch(error => console.log(error))
 
   }
 
- 
 
+<<<<<<< HEAD
   componentDidUpdate(){
   
     //console.log
+=======
+  gifsRandom = () => {
+
+    
+    this.setState({
+      gifRandom1: Math.floor(Math.random()*51),
+      gifRandom2: Math.floor(Math.random()*51),
+      gifRandom3: Math.floor(Math.random()*51),
+      gifRandom4: Math.floor(Math.random()*51),
+      
+    })
+    
+    console.log('hiciste click')
+
   }
 
-  
+  componentDidUpdate() {
+
+
+
+>>>>>>> experimental
+  }
+
 
 
   render() {
 
-    
-    
-    return (
-    
-      <div>
-        <NavBar />
-        <BarraGifs gifs={this.state.gifs} />
-      </div>
-    );
+    if (this.state.gifs.length === 0) {
+      console.log('cargando..')
+    } else {
+      return (
+
+        <div>
+          <NavBar gifsRandom={this.gifsRandom} />
+          <BarraGifs gifs={this.state} gifsRandom={this.state} />
+        </div>
+      );
+    }
+
+
   }
 
 };

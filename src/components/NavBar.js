@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class NavBar extends Component {
+function NavBar(props) {
     
     
-    render() {
+    
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div className="container">
@@ -15,14 +15,14 @@ class NavBar extends Component {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="nav ml-auto">
                         <li className="nav-item">
-                            <button className="btn btn-success">Cargar random</button>
+                            <button className="btn btn-success"onClick={props.gifsRandom} >Cargar random</button>
                         </li>
                     </ul>
                 </div>
             </nav>
         )
 
-    }
+    
 }
 
 export default NavBar;

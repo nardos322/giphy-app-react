@@ -14,7 +14,7 @@ class App extends Component {
       gifRandom2: '',
       gifRandom3: '',
       gifRandom4: '',
-      haveGifs: false
+      
     }
 
   }
@@ -38,43 +38,17 @@ class App extends Component {
 
 
   gifsRandom = () => {
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=MFhSopoO8vHA8GS6D0oWeS1tF6ev4Jqb&tag=&rating=g')
-      .then(res => res.json())
-      .then(data => {
 
-        this.setState({
-          gifRandom1: data.data,
-          haveGifs: true
-        })
-
-
-      })
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=MFhSopoO8vHA8GS6D0oWeS1tF6ev4Jqb&tag=&rating=g')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          gifRandom2: data.data
-        })
-
-      })
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=MFhSopoO8vHA8GS6D0oWeS1tF6ev4Jqb&tag=&rating=g')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          gifRandom3: data.data
-        })
-
-      })
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=MFhSopoO8vHA8GS6D0oWeS1tF6ev4Jqb&tag=&rating=g')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          gifRandom4: data.data
-        })
-
-      })
-
-     
+    
+    this.setState({
+      gifRandom1: Math.floor(Math.random()*51),
+      gifRandom2: Math.floor(Math.random()*51),
+      gifRandom3: Math.floor(Math.random()*51),
+      gifRandom4: Math.floor(Math.random()*51),
+      
+    })
+    
+    console.log('hiciste click')
 
   }
 

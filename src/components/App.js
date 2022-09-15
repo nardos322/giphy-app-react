@@ -37,11 +37,6 @@ class App extends Component {
   }
 
 
-<<<<<<< HEAD
-  componentDidUpdate(){
-  
-    //console.log
-=======
   gifsRandom = () => {
 
     
@@ -61,7 +56,6 @@ class App extends Component {
 
 
 
->>>>>>> experimental
   }
 
 

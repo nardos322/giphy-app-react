@@ -35,9 +35,7 @@ class App extends Component {
  
 
   componentDidUpdate(){
-   // console.log('me actualice')
-    //console.log(this.state)
-   // console.log(this.state.gifs[0].images)
+  
     
   }
 
